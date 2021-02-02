@@ -10,5 +10,5 @@ router.get('/movies',moviesController.listar);
 router.get('/movies/detail/:id',moviesController.detalle);
 router.get ('/movies/new',moviesController.nueva); 
 router.get ('/movies/recommended',moviesController.recomendadas);
-router.post('movies/search',moviesController.buscar); 
+router.post('/movies/search',moviesController.buscar); 
 module.exports = router;

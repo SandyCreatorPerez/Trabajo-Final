@@ -15,7 +15,7 @@ let moviesController = {
         res.render('recomendadas')
     },
     buscar: (req,res)=>{
-        res.rebder('buscar')
+        res.render('buscar')
     }
 }
 module.exports = moviesController; 
