@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    <h1>Actores Favoritos</h1>
+    <ul>
+        <% for (let i = 0; i<actorsRecomendadas.length;i++) {%>
+            <li>
+                <a href="/actors/detail/<%= actorsRecomendadas[i].id %>"><%= actorsRecomendadas[i].first_name %>  <%= actorsRecomendadas[i].last_name %></a>
+            </li>
+        <% } %>
+    </ul>
+    
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>

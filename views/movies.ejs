@@ -6,8 +6,20 @@
     <title>Movies</title>
 </head>
 <body>
-    <p>
-        Listado de Peliculas
-    </p>
+    <%- include('partials/header.ejs') %>
+    <form action="/movies/search" method="POST">
+        <label for="search">Buscar</form>
+        <input type="search" name="buscar">
+    </form>
+    <h1>Listado de Peliculas</h1>
+    <ul>
+        <% for (let i = 0; i<movies.length;i++) {%>
+            <li>
+                <a href="/movies/detail/<%= movies[i].id %>"><%= movies[i].title %></a>
+            </li>
+        <% } %>
+    </ul>
+    
+    <%- include('partials/footer.ejs') %>
 </body>
 </html>

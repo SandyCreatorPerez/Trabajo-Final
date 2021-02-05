@@ -6,8 +6,18 @@
     <title>Detalle</title>
 </head>
 <body>
-   <p>
-       Detalle de la Pelicula
-   </p>
+    <%- include('partials/header.ejs') %>
+    <h1><%= movie.title %></h1>
+    <p>Rating:<%= movie.rating %></p>
+    <p>Premios:<%= movie.awards %></p>  
+    <p>Duracion:<%= movie.length %></p>
+    <p>Fecha de estreno:<%= movie.release_date %></p> 
+    
+    <a href='/movies/edit/<%=movie.id%>'><button type="button" >MODIFICAR</button></a>  
+
+    <form action="/movies/delete/<%= movie.id %>" method="POST">
+    <a href="/movies/delete/<%= movie.id %>"><button type="submit">BORRAR</button></a>
+    </form>
+    <%- include('partials/footer.ejs') %>
 </body>
 </html>

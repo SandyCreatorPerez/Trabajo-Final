@@ -1,30 +1,30 @@
-const Sequelize = require ('sequelize');
-const sequelize = require('../../database'); 
 
+ 
+module.exports = (sequelize,dataTypes)=> {
 const Genre = sequelize.define('Genre',{
     id:{
-        primarykey: true,
+        primaryKey: true,
         autoincrement: true, 
-        type: DataTypes.INTEGER
+        type: dataTypes.INTEGER
     }, 
     created_at:{
-        type:DataTypes.DATEONLY,
+        type:dataTypes.DATEONLY,
         allowNull: true
 
     }, 
-    updated_at:DataTypes.DATEONLY
+    updated_at:dataTypes.DATEONLY
        //AllowNull por Dafault es True, 
     ,
-    name:DataTypes.STRING
+    name:dataTypes.STRING
     , 
-    ranking: DataTypes.DECIMAL
+    ranking: dataTypes.DECIMAL
     , 
-    active:DataTypes.INTEGER
+    active:dataTypes.INTEGER
     },
 
     {timestamps: false,
     tableName: 'genres'
     });
+    return Genre; 
+}
 
-
-module.exports = Genre;

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+   
+    <h1>Resultado de la busqueda</h1>
+    <ul>
+        <% for (let i = 0; i<moviesjson1.length;i++) {%>
+            <li>
+                <a href="/movies/detail/<%= moviesjson1[i].id %>"><%= moviesjson1[i].title %></a>
+            </li>
+        <% } %>
+    </ul>
+    
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>

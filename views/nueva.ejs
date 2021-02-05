@@ -6,9 +6,17 @@
     <title>Document</title>
 </head>
 <body> 
-    <p>
-        Nueva Peli
-    </p>
+    <%- include('partials/header.ejs') %>
+    <h1>Peliculas mas recientes</h1>
+    <ul>
+        <% for (let i = 0; i<nuevas.length;i++) {%>
+            <li>
+                <a href="/movies/detail/<%= nuevas[i].id %>"><%= nuevas[i].title %></a>
+            </li>
+        <% } %>
+    </ul>
+    
+    <%- include('partials/footer.ejs') %>
     
 </body>
 </html>

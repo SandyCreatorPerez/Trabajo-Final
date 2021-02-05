@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    <h1>Cargar Nueva Pelicula</h1>
+    <form action="/movies" method="POST">
+        <label for="first_name">Nombre</label>
+        <input type='text' placeholder="Nombre" id="first_name" name="first_name">
+
+        <label for="last_name">Apellido</label>
+        <input type="number" placeholder="Apellido" id="last_name" name="last_name">
+
+        <label for="rating">Rating</label>
+        <input type='number' placeholder="rating " id="rating" name="rating">
+
+        <label for="length">Duracion</label>
+        <input type="number" placeholder="duracion" id="lenght" name="length">
+
+        <label for="release_date">Fecha de estreno</label>
+        <input type="date" placeholder="fecha de estreno" id="release_date" name="release_date">
+        <button type="submit">Enviar</button> 
+
+    </form>
+
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>

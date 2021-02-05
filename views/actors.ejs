@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    <form action="/actors/search" method="POST">
+        <label for="search">Buscar</form>
+        <input type="search" name="buscar">
+    </form>
+    <h1>Listado de Actores</h1>
+    <ul>
+        <% for (let i = 0; i<actors.length;i++) {%>
+            <li>
+                <a href="/actors/detail/<%= actors[i].id %>">
+                    <p><%= actors[i].first_name %>  <%= actors[i].last_name %></p>
+                </a>
+            </li>
+        <% } %>
+    </ul>
+    
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>

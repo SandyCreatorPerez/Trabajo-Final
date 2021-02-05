@@ -6,8 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-        <P>
-            Recomendadas
-        </P>
+    <%- include('partials/header.ejs') %>
+    <h1>Peliculas recomendadas</h1>
+    <ul>
+        <% for (let i = 0; i<recomendadas.length;i++) {%>
+            <li>
+                <a href="/movies/detail/<%= recomendadas[i].id %>"><%= recomendadas[i].title %></a>
+            </li>
+        <% } %>
+    </ul>
+    
+    <%- include('partials/footer.ejs') %>
 </body>
 </html>
