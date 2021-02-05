@@ -21,6 +21,10 @@ router.get('/actors',actorsController.listar);
 router.get('/actors/detail/:id',actorsController.detalle);
 router.get ('/actors/recommended',actorsController.recomendadas);
 router.get('/actors/create',actorsController.formulario);
+router.post('/actors/create',actorsController.crear);
+router.get('/actors/edit/:id',actorsController.verEditar);
+router.post('/actors/edit/:id',actorsController.editar);
+router.post('/actors/delete/:id',actorsController.eliminar);
 
 
 module.exports = router;

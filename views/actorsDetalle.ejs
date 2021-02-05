@@ -7,11 +7,15 @@
 </head>
 <body>
     <%- include('partials/header.ejs') %>
-    <h1><%= actor.first_name%><%= actor.last_name%></h1>
+    <h1><%= actor.first_name%>  <%= actor.last_name%></h1>
     <p>Rating:<%= actor.rating %></p>
     <p>Pelicula favorita:<%= actor.favorite_movie_id %></p>   
-    <button type="button">BORRAR</button>
-    <button type="button">MODIFICAR</button>   
+
+    <a href='/actors/edit/<%=actor.id%>'><button type="button">MODIFICAR</button></a>
+
+    <form action="/actors/delete/<%= actor.id %>" method="POST">
+        <a href="/actors/delete/<%= actor.id %>"><button type="submit">BORRAR</button></a>
+        </form>
     
     <%- include('partials/footer.ejs') %>
 </body>

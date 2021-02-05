@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    <h1>Editar Actor</h1>
+    <form action="/actors/edit/<%=actor.id%>"" method="POST">
+        <label for="first_name">Nombre</label>
+        <input type='text' placeholder="Nombre" id="first_name" name="first_name" value='<%=actor.first_name%>'>
+
+        <label for="last_name">Apellido</label>
+        <input type="text" placeholder="Apellido" id="last_name" name="last_name" value='<%=actor.last_name%>'>
+
+        <label for="rating">Rating</label>
+        <input type='number' placeholder="rating " id="rating" name="rating" value='<%=actor.rating%>'>
+
+        <label for="favorite_movie_id">Pelicula Favorita</label>
+        <input type="text" placeholder="Pelicula favorita" id="favorite_movie_id" name="favorite_movie_id" value='<%=actor.favorite_movie_id%>'>
+
+        <button type="submit">Enviar</button> 
+
+    </form>
+
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>
